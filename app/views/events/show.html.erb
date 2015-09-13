@@ -8,5 +8,13 @@
   <%= @event.description %>
 </p>
 
+<% if @event.attendees.any? %>
+	<h2>Attendees</h2>
+	<%= render @event.attendees %>
+<% end %>
+
+<h2>Add an attendee:</h2>
+<%= render 'attendees/form' %>
+
 <%= link_to 'Edit', edit_event_path(@event) %>
 <%= link_to 'Back', events_path %>

@@ -1,0 +1,14 @@
+<p>
+	<strong>Attendee:</strong>
+	<%= attendee.attendee_name %>
+</p>
+<p>
+	<strong>Resonse:</strong>
+	<% case attendee.response when 1 %>Yes
+	<% when 0 %>Maybe
+	<% when -1 %>No
+	<% end %>
+</p>
+<p>
+	<%= link_to 'Destroy Attendee', [attendee.event, attendee], method: :delete, data: {confirm: 'Are you sure?'} %>
+</p>

@@ -1,0 +1,13 @@
+<%= form_for([@event, @event.attendees.build]) do |f| %>
+	<p>
+		<%= f.label :attendee_name %><br>
+		<%= f.text_field :attendee_name %>
+	</p>
+	<p>
+		<%= f.label :response %><br>
+		<%= f.select(:response, options_for_select([['Yes', 1],['Maybe', 0],['No', -1]], 1)) %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
