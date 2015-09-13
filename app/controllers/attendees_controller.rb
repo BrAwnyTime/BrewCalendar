@@ -1,4 +1,7 @@
 class AttendeesController < ApplicationController
+
+	http_basic_authenticate_with name: "dhh", password: "secret", only: :destroy
+
 	def create
 		@event = Event.find(params[:event_id])
 		@attendee = @event.attendees.create(attendee_params)
